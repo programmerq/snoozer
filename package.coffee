@@ -3,8 +3,10 @@ pack = Packages.register
   description: 'Various screenshot taking methods'
 
 pack.commands
-  'wait':
+  'snooze':
     spoken: 'snoozer'
+    grammarType: 'individual'
+    continuous: true
     description: 'Pause for 50 milliseconds'
-
-require("./#{global.platform}")(pack)
+    action: ->
+      @delay 2000
